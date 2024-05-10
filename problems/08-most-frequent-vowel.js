@@ -73,7 +73,7 @@ function mostFrequentVowel(words, counter = {}) {
   return mostFrequentVowel(words.slice(0, -1), counter);
 }
 
-console.log(mostFrequentVowel(['apple', 'pear', 'melon', 'coconut', 'lime']));
+// console.log(mostFrequentVowel(['apple', 'pear', 'melon', 'coconut', 'lime']));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
