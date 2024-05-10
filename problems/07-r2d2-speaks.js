@@ -16,7 +16,25 @@
 
 function r2d2Speaks(code) {
   // Your code here 
+  function playSound(index) {
+    if (index >= code.length) {
+      return;
+    }
+
+    if (code[index] === 0) {
+      console.log('beep');
+      setTimeout(() => playSound(index + 1), 400);
+    } else if (code[index] === 1) {
+      console.log('boop');
+      setTimeout(() => playSound(index + 1), 800);
+    }
+  }
+
+  playSound(0);
 }
+
+let code = [0, 1, 1, 0];
+    r2d2Speaks(code);
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

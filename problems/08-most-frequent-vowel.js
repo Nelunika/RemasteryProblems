@@ -48,6 +48,32 @@ on the command line.
 ***********************************************************************/
 
 // Your code here 
+function mostFrequentVowel(words, counter = {}) {
+  if (words.length === 0) {
+    let maxCount = 0;
+    let mostFrequentVowel = '';
+    for (let vowel in counter) {
+      if (counter[vowel] > maxCount) {
+        maxCount = counter[vowel];
+        mostFrequentVowel = vowel;
+      }
+    }
+    return mostFrequentVowel;
+  }
+
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  const word = words[words.length - 1];
+
+  for (let char of word) {
+    if (vowels.includes(char)) {
+      counter[char] = (counter[char] || 0) + 1;
+    }
+  }
+
+  return mostFrequentVowel(words.slice(0, -1), counter);
+}
+
+console.log(mostFrequentVowel(['apple', 'pear', 'melon', 'coconut', 'lime']));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
